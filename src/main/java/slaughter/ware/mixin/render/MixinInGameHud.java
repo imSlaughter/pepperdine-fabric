@@ -11,8 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import slaughter.ware.SlaughterWare;
 import slaughter.ware.client.event.impl.EventRenderer2D;
 
-import javax.security.auth.callback.Callback;
-
 @Mixin(InGameHud.class)
 public class MixinInGameHud {
 

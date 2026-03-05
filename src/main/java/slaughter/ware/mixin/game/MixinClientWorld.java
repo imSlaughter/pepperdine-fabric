@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import slaughter.ware.SlaughterWare;
-import slaughter.ware.client.functions.visual.Ambience;
+import slaughter.ware.client.features.implementations.visual.Ambience;
 import slaughter.ware.client.modules.ModuleRepository;
 
 @Mixin(World.class)

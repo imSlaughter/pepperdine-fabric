@@ -3,9 +3,9 @@ package slaughter.ware.client.modules;
 import com.google.common.eventbus.Subscribe;
 import net.minecraft.client.util.InputUtil;
 import slaughter.ware.client.event.impl.EventUpdate;
-import slaughter.ware.client.functions.movement.AutoSprint;
-import slaughter.ware.client.functions.movement.Fly;
-import slaughter.ware.client.functions.visual.Ambience;
+import slaughter.ware.client.features.implementations.movement.AutoSprint;
+import slaughter.ware.client.features.implementations.movement.Fly;
+import slaughter.ware.client.features.implementations.visual.Ambience;
 import slaughter.ware.client.modules.api.Module;
 import slaughter.ware.client.utils.IMinecraft;
 

@@ -1,4 +1,4 @@
-package slaughter.ware.client.functions.movement;
+package slaughter.ware.client.features.implementations.movement;
 
 import org.lwjgl.glfw.GLFW;
 import slaughter.ware.client.modules.ModuleCategory;

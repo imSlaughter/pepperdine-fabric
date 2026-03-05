@@ -1,4 +1,4 @@
-package slaughter.ware.client.functions.visual;
+package slaughter.ware.client.features.implementations.visual;
 
 import org.lwjgl.glfw.GLFW;
 import slaughter.ware.client.modules.ModuleCategory;

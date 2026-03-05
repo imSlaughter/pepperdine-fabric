@@ -9,5 +9,3 @@ public @interface ModuleInfo {
     String description() default "";
     String modulecategory() default "";
 }
-
-// не юзайте нахуй это дерьмо, окда?

@@ -2,6 +2,7 @@ package slaughter.ware.client.modules;
 
 import com.google.common.eventbus.Subscribe;
 import net.minecraft.client.util.InputUtil;
+import slaughter.ware.client.event.impl.EventRenderer2D;
 import slaughter.ware.client.event.impl.EventUpdate;
 import slaughter.ware.client.features.implementations.movement.AutoSprint;
 import slaughter.ware.client.features.implementations.movement.Fly;
@@ -63,6 +64,15 @@ public class ModuleRepository {
 
             if (module.isEnabled()) {
                 module.onUpdate();
+            }
+        }
+    }
+
+    @Subscribe
+    public void onRender2D(EventRenderer2D event) {
+        for (Module module : modules) {
+            if (module.isEnabled()) {
+                module.onRender2D(event.getContext(), event.getCounter());
             }
         }
     }

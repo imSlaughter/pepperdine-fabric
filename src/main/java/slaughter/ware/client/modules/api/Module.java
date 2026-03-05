@@ -1,5 +1,7 @@
 package slaughter.ware.client.modules.api;
 
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderTickCounter;
 import lombok.Getter;
 import net.minecraft.client.MinecraftClient;
 import slaughter.ware.client.modules.ModuleCategory;
@@ -37,6 +39,9 @@ public class Module implements IMinecraft {
     }
 
     public void onUpdate() {
+    }
+
+    public void onRender2D(DrawContext context, RenderTickCounter tickCounter) {
     }
 
     protected MinecraftClient mc() {

@@ -1,9 +1,8 @@
 package slaughter.ware.client.features.implementations.visual;
 
-import com.google.common.eventbus.Subscribe;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderTickCounter;
 import org.lwjgl.glfw.GLFW;
-import slaughter.ware.client.event.impl.EventRenderer2D;
 import slaughter.ware.client.modules.ModuleCategory;
 import slaughter.ware.client.modules.api.Module;
 
@@ -15,13 +14,20 @@ public class Hud extends Module {
         super("HUD", GLFW.GLFW_KEY_K, ModuleCategory.VISUAL);
     }
 
-    @Subscribe
-    public void onRenderer2D(EventRenderer2D event) {
-        DrawContext dc = event.getContext();
+    @Override
+    public void onRender2D(DrawContext dc, RenderTickCounter tickCounter) {
+        final String text = "SlaughterWare";
+        final int x = 30;
+        final int y = 20;
+        final int paddingX = 8;
+        final int paddingY = 5;
 
-        int x = 30, y = 20, width = 30, height = 20;
+        int textWidth = mc().textRenderer.getWidth(text);
+        int width = textWidth + paddingX * 2;
+        int height = mc().textRenderer.fontHeight + paddingY * 2;
 
-        dc.fill(x, y, width, height, new Color(25, 25, 25).getRGB());
-        dc.drawTextWithShadow(mc().textRenderer, "SlaughterWare", x + 2, y + 1, 0xFFFFFFFF);
+        dc.fill(x, y, x + width, y + height, new Color(15, 15, 15, 190).getRGB());
+        dc.fill(x, y, x + width, y + 2, new Color(170, 20, 20, 220).getRGB());
+        dc.drawTextWithShadow(mc().textRenderer, text, x + paddingX, y + paddingY, 0xFFFFFFFF);
     }
 }

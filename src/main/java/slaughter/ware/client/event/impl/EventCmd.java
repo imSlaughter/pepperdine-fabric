@@ -7,4 +7,6 @@ import slaughter.ware.client.event.api.Event;
 @Getter
 @AllArgsConstructor
 public class EventCmd extends Event {
+    private String text;
+    private boolean send;
 }

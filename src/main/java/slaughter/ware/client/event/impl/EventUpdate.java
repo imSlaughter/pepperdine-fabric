@@ -2,7 +2,7 @@ package slaughter.ware.client.event.impl;
 
 import lombok.Getter;
 import slaughter.ware.client.event.api.Event;
-import slaughter.ware.client.utils.IMinecraft;
+import slaughter.ware.client.utils.Minecraft.IMinecraft;
 
 @Getter
 public class EventUpdate extends Event {

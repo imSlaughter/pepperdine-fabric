@@ -5,9 +5,11 @@ import net.minecraft.client.util.InputUtil;
 import slaughter.ware.client.event.impl.EventUpdate;
 import slaughter.ware.client.features.implementations.movement.AutoSprint;
 import slaughter.ware.client.features.implementations.movement.Fly;
+import slaughter.ware.client.features.implementations.movement.NoSlow;
 import slaughter.ware.client.features.implementations.visual.Ambience;
+import slaughter.ware.client.features.implementations.visual.Hud;
 import slaughter.ware.client.modules.api.Module;
-import slaughter.ware.client.utils.IMinecraft;
+import slaughter.ware.client.utils.Minecraft.IMinecraft;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +26,8 @@ public class ModuleRepository {
         register(new AutoSprint());
         register(new Ambience());
         register(new Fly());
+        register(new NoSlow());
+        register(new Hud());
     }
 
     public void register(Module module) {

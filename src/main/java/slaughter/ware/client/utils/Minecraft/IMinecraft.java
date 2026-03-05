@@ -1,4 +1,4 @@
-package slaughter.ware.client.utils;
+package slaughter.ware.client.utils.Minecraft;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderTickCounter;

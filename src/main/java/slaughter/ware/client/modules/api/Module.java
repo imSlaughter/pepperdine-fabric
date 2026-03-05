@@ -3,7 +3,7 @@ package slaughter.ware.client.modules.api;
 import lombok.Getter;
 import net.minecraft.client.MinecraftClient;
 import slaughter.ware.client.modules.ModuleCategory;
-import slaughter.ware.client.utils.IMinecraft;
+import slaughter.ware.client.utils.Minecraft.IMinecraft;
 
 @Getter
 public class Module implements IMinecraft {

@@ -9,7 +9,7 @@ import slaughter.ware.SlaughterWare;
 import slaughter.ware.client.event.impl.EventUpdate;
 
 @Mixin(MinecraftClient.class)
-public class MixinMinecraftClass {
+public class MixinMinecraftClient {
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void onTick(CallbackInfo ci) {

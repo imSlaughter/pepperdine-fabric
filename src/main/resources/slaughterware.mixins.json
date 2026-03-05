@@ -5,8 +5,10 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "game.MixinMinecraftClass",
-    "game.MixinClientWorld"
+    "game.MixinMinecraftClient",
+    "game.MixinClientWorld",
+    "game.MixinChatScreen",
+    "player.MixinClientPlayerEntity"
   ],
   "server": [],
   "injectors": {

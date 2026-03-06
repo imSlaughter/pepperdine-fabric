@@ -15,7 +15,7 @@ import slaughter.ware.client.modules.ModuleRepository;
 public class MixinClientPlayerEntity {
 
     @Inject(method = "applyMovementSpeedFactors", at = @At("HEAD"), cancellable = true, require = 0)
-    private void noSlowApplyMovementSpeedFactors(Vec2f input, CallbackInfoReturnable<Vec2f> cir) {
+    private void noSlowApplyMove(Vec2f input, CallbackInfoReturnable<Vec2f> cir) {
         if (isNoSlowEnabled()) {
             cir.setReturnValue(input);
         }
@@ -26,7 +26,7 @@ public class MixinClientPlayerEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"),
             require = 0
     )
-    private boolean noSlowTickMovementUsingItem(ClientPlayerEntity player) {
+    private boolean noSlowTickMove(ClientPlayerEntity player) {
         return isNoSlowEnabled() ? false : player.isUsingItem();
     }
 
@@ -35,7 +35,7 @@ public class MixinClientPlayerEntity {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z"),
             require = 0
     )
-    private boolean noSlowCanStartSprintingUsingItem(ClientPlayerEntity player) {
+    private boolean noSlowCanStart(ClientPlayerEntity player) {
         return isNoSlowEnabled() ? false : player.isUsingItem();
     }
 

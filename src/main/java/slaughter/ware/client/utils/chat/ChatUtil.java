@@ -32,10 +32,10 @@ public class ChatUtil implements IMinecraft {
             int colorCode = (r << 16) | (g << 8) | b;
 
             gradientText.append(Text.literal(String.valueOf(textToGradient.charAt(i))).setStyle(Style.EMPTY.withColor(colorCode)));
-
-            Text finalText = gradientText.append(Text.literal(" >>> ").formatted(Formatting.GRAY))
-                    .append(Text.literal(String.valueOf(message)).formatted(Formatting.WHITE));
-            IMinecraft.mc().inGameHud.getChatHud().addMessage(finalText);
         }
+
+        Text finalText = gradientText.append(Text.literal(" >>> ").formatted(Formatting.GRAY))
+                .append(Text.literal(String.valueOf(message)).formatted(Formatting.WHITE));
+        IMinecraft.mc().inGameHud.getChatHud().addMessage(finalText);
     }
 }

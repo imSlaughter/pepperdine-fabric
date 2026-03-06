@@ -11,7 +11,7 @@ import slaughter.ware.client.utils.Minecraft.IMinecraft;
 public class Module implements IMinecraft {
 
     private final String name;
-    private final int key;
+    private int key;
     private final ModuleCategory category;
     private final String description;
     private boolean enabled;
@@ -46,5 +46,13 @@ public class Module implements IMinecraft {
 
     protected MinecraftClient mc() {
         return IMinecraft.mc();
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
+    protected void setEnabledState(boolean enabled) {
+        this.enabled = enabled;
     }
 }

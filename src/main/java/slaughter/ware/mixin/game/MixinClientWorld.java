@@ -13,7 +13,7 @@ import slaughter.ware.client.modules.ModuleRepository;
 public class MixinClientWorld {
 
     @Inject(method = "getTimeOfDay()J", at = @At("RETURN"), cancellable = true)
-    private void onGetTimeOfDay(CallbackInfoReturnable<Long> cir) {
+    private void onGetTime(CallbackInfoReturnable<Long> cir) {
         SlaughterWare main = SlaughterWare.getInstance();
         if (main == null) {
             return;

@@ -9,7 +9,11 @@
     "game.MixinClientWorld",
     "game.MixinChatScreen",
     "player.MixinClientPlayerEntity",
+    "render.MixinBossBarHud",
+    "render.MixinEntity",
+    "render.MixinGameRenderer",
     "render.MixinInGameHud"
+    ,"render.MixinInGameOverlayRenderer"
   ],
   "server": [],
   "injectors": {

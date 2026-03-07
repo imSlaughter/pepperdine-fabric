@@ -29,6 +29,7 @@ public class MultiBooleanSetting extends Setting<List<BooleanSetting>> {
         if (sameValue(value)) return;
         super.setValue(value);
         runAction();
+        changed();
     }
 
     @Override

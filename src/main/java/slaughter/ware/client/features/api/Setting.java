@@ -2,7 +2,9 @@ package slaughter.ware.client.features.api;
 
 import lombok.Getter;
 import lombok.Setter;
+import slaughter.ware.SlaughterWare;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
     @Getter
@@ -29,9 +31,13 @@ import java.util.function.Supplier;
         }
 
         protected boolean sameValue(T newValue) {
-            if (value == null || newValue == null) return false;
+            return Objects.equals(value, newValue);
+        }
 
-            return value == newValue;
+        protected void changed() {
+            if (SlaughterWare.getInstance() != null) {
+                SlaughterWare.getInstance().requestConfigSave();
+            }
         }
 
         public Setting<T> onAction(Runnable action) {

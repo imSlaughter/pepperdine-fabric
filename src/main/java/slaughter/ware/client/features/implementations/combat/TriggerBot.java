@@ -8,16 +8,19 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import org.lwjgl.glfw.GLFW;
+import slaughter.ware.client.features.api.SliderSetting;
 import slaughter.ware.client.modules.ModuleCategory;
 import slaughter.ware.client.modules.api.Module;
 
 public final class TriggerBot extends Module {
 
     private static final long ATTACK_DELAY = 618L;
+    private final SliderSetting distance = new SliderSetting("Distance").value(3F).range(3F, 6F).step(0.1f);
     private long lastAttackTime;
 
     public TriggerBot() {
         super("TriggerBot", GLFW.GLFW_KEY_R, ModuleCategory.COMBAT);
+        addSettings(distance);
     }
 
     @Override
@@ -60,6 +63,10 @@ public final class TriggerBot extends Module {
             return false;
         }
 
+        if (player.squaredDistanceTo(target) > getAttackRange() * getAttackRange()) {
+            return false;
+        }
+
         if (target instanceof EndCrystalEntity) {
             return true;
         }
@@ -69,5 +76,10 @@ public final class TriggerBot extends Module {
         }
 
         return !livingTarget.isSleeping();
+    }
+
+    private float getAttackRange() {
+        Float value = distance.getValue();
+        return value == null ? 3.0f : value;
     }
 }

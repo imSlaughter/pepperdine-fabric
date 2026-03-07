@@ -11,6 +11,8 @@ import slaughter.ware.client.features.implementations.movement.NoSlow;
 import slaughter.ware.client.features.implementations.visual.Ambience;
 import slaughter.ware.client.features.implementations.visual.ClickGuiModule;
 import slaughter.ware.client.features.implementations.visual.Hud;
+import slaughter.ware.client.features.implementations.visual.NightVision;
+import slaughter.ware.client.features.implementations.visual.Removals;
 import slaughter.ware.client.modules.api.Module;
 import slaughter.ware.client.utils.Minecraft.IMinecraft;
 
@@ -31,6 +33,8 @@ public class ModuleRepository {
         register(new Fly());
         register(new NoSlow());
         register(new Hud());
+        register(new NightVision());
+        register(new Removals());
         register(new ClickGuiModule());
         register(new TriggerBot());
     }
@@ -67,8 +71,10 @@ public class ModuleRepository {
             return;
         }
 
+        boolean screenOpen = IMinecraft.mc().currentScreen != null;
+
         for (Module module : modules) {
-            boolean pressed = InputUtil.isKeyPressed(IMinecraft.window(), module.getKey());
+            boolean pressed = !screenOpen && module.getKey() != -1 && InputUtil.isKeyPressed(IMinecraft.window(), module.getKey());
             boolean wasPressed = keyStates.getOrDefault(module.getKey(), false);
             if (pressed && !wasPressed) {
                 module.toggle();

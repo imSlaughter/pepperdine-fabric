@@ -1,5 +1,6 @@
 package slaughter.ware.client.command;
 
+import slaughter.ware.SlaughterWare;
 import slaughter.ware.client.command.impl.BindCommand;
 import slaughter.ware.client.command.impl.HelpCommand;
 import slaughter.ware.client.command.impl.ModulesCommand;
@@ -80,6 +81,9 @@ public class CommandManager {
 
     public void setPrefix(String prefix) {
         this.prefix = prefix;
+        if (SlaughterWare.getInstance() != null) {
+            SlaughterWare.getInstance().requestConfigSave();
+        }
     }
 
     public List<String> getSuggestions(String message) {

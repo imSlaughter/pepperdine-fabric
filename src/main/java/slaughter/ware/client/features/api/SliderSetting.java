@@ -25,6 +25,7 @@ public class SliderSetting extends Setting<Float> {
         if (sameValue(value)) return;
         super.setValue(value);
         runAction();
+        changed();
     }
 
     @Override

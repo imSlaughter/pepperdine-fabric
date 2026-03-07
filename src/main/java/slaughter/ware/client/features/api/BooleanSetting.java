@@ -19,6 +19,7 @@ import java.util.function.Supplier;
             if (sameValue(value)) return;
             super.setValue(value);
             runAction();
+            changed();
         }
 
         @Override

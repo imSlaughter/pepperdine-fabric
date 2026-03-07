@@ -4,6 +4,7 @@ import com.google.common.eventbus.EventBus;
 import lombok.Getter;
 import net.fabricmc.api.ModInitializer;
 import slaughter.ware.client.command.CommandManager;
+import slaughter.ware.client.config.ConfigManager;
 import slaughter.ware.client.event.api.Event;
 import slaughter.ware.client.modules.ModuleRepository;
 import slaughter.ware.client.modules.api.Module;
@@ -16,6 +17,7 @@ public class SlaughterWare implements ModInitializer {
     private EventBus eventBus;
     private ModuleRepository moduleRepository;
     private CommandManager commandManager;
+    private ConfigManager configManager;
 
     @Override
     public void onInitialize() {
@@ -27,6 +29,8 @@ public class SlaughterWare implements ModInitializer {
         eventBus.register(moduleRepository);
 
         commandManager = new CommandManager();
+        configManager = new ConfigManager();
+        configManager.load();
     }
 
     public void registerModule(Module module) {
@@ -36,6 +40,12 @@ public class SlaughterWare implements ModInitializer {
     public void postEvent(Event event) {
         if (eventBus != null) {
             eventBus.post(event);
+        }
+    }
+
+    public void requestConfigSave() {
+        if (configManager != null) {
+            configManager.requestSave();
         }
     }
 }

@@ -21,6 +21,7 @@ public class BindSetting extends Setting<Integer> {
         if (sameValue(value)) return;
         super.setValue(value);
         runAction();
+        changed();
     }
 
     @Override

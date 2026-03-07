@@ -63,6 +63,7 @@ public class ModeSetting extends Setting<String> {
         if (sameValue(value)) return;
         super.setValue(value);
         runAction();
+        changed();
     }
 
     @Override

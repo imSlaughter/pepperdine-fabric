@@ -3,7 +3,7 @@ package slaughter.ware.client.features.implementations.visual;
 import org.lwjgl.glfw.GLFW;
 import slaughter.ware.client.modules.ModuleCategory;
 import slaughter.ware.client.modules.api.Module;
-import slaughter.ware.client.ui.ClickGuiScreen;
+import slaughter.ware.client.ui.ScreenClickGUI;
 
 public final class ClickGuiModule extends Module {
 
@@ -13,12 +13,12 @@ public final class ClickGuiModule extends Module {
 
     @Override
     protected void onEnable() {
-        if (mc().currentScreen instanceof ClickGuiScreen) {
+        if (mc().currentScreen instanceof ScreenClickGUI) {
             setEnabledState(false);
             return;
         }
 
-        mc().setScreen(new ClickGuiScreen());
+        mc().setScreen(new ScreenClickGUI());
         setEnabledState(false);
     }
 }

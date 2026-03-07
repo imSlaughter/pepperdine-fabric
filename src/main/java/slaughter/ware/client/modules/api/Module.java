@@ -4,8 +4,14 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
 import lombok.Getter;
 import net.minecraft.client.MinecraftClient;
+import slaughter.ware.SlaughterWare;
+import slaughter.ware.client.features.api.Setting;
 import slaughter.ware.client.modules.ModuleCategory;
 import slaughter.ware.client.utils.Minecraft.IMinecraft;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Getter
 public class Module implements IMinecraft {
@@ -14,6 +20,7 @@ public class Module implements IMinecraft {
     private int key;
     private final ModuleCategory category;
     private final String description;
+    private final List<Setting<?>> settings = new ArrayList<>();
     private boolean enabled;
 
     public Module(String name, int key, ModuleCategory category) {
@@ -29,6 +36,9 @@ public class Module implements IMinecraft {
             onEnable();
         } else {
             onDisable();
+        }
+        if (SlaughterWare.getInstance() != null) {
+            SlaughterWare.getInstance().requestConfigSave();
         }
     }
 
@@ -50,9 +60,20 @@ public class Module implements IMinecraft {
 
     public void setKey(int key) {
         this.key = key;
+        if (SlaughterWare.getInstance() != null) {
+            SlaughterWare.getInstance().requestConfigSave();
+        }
     }
 
     protected void setEnabledState(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public void applySavedEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    protected void addSettings(Setting<?>... settings) {
+        Collections.addAll(this.settings, settings);
     }
 }

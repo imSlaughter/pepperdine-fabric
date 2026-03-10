@@ -9,6 +9,7 @@
     "game.MixinClientWorld",
     "game.MixinChatScreen",
     "player.MixinClientPlayerEntity",
+    "player.MixinAbstractClientPlayerEntity",
     "render.MixinBossBarHud",
     "render.MixinEntity",
     "render.MixinGameRenderer",

@@ -1,0 +1,11 @@
+package pepper.dine.client.modules.api;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ModuleInfo {
+    String name();
+    String description() default "";
+    String modulecategory() default "";
+}

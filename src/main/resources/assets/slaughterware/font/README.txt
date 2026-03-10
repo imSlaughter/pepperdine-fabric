@@ -14,4 +14,4 @@ Example file: sf_medium.json
 }
 
 The Java font ids are declared in:
-slaughter.ware.client.utils.render.font.Fonts
+font.render.utils.client.pepper.dine.Fonts

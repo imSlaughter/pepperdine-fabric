@@ -21,7 +21,7 @@ public class MixinInGameHud {
     }
 
     @Inject(method = "renderScoreboardSidebar(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/client/render/RenderTickCounter;)V", at = @At("HEAD"), cancellable = true)
-    private void slaughterware$cancelScoreboard(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
+    private void pepperdine$cancelScoreboard(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isScoreboard()) {
             ci.cancel();

@@ -12,7 +12,7 @@ import pepper.dine.client.features.implementations.visual.Removals;
 public class MixinBossBarHud {
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    private void slaughterware$cancelBossBar(DrawContext context, CallbackInfo ci) {
+    private void pepperdine$cancelBossBar(DrawContext context, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isBossBar()) {
             ci.cancel();

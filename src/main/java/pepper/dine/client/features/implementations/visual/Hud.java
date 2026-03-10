@@ -16,7 +16,7 @@ public class Hud extends Module {
 
     @Override
     public void onRender2D(DrawContext dc, RenderTickCounter tickCounter) {
-        final String text = "SlaughterWare";
+        final String text = "PepperDine!";
         final int x = 30;
         final int y = 20;
         final int paddingX = 8;

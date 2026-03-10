@@ -12,7 +12,7 @@ import pepper.dine.client.features.implementations.visual.Removals;
 public class MixinGameRenderer {
 
     @Inject(method = "tiltViewWhenHurt", at = @At("HEAD"), cancellable = true)
-    private void slaughterware$cancelHurtCamera(MatrixStack matrices, float tickProgress, CallbackInfo ci) {
+    private void pepperdine$cancelHurtCamera(MatrixStack matrices, float tickProgress, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isHurtCamera()) {
             ci.cancel();

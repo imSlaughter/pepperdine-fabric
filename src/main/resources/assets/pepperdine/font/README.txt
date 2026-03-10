@@ -5,7 +5,7 @@ Example file: sf_medium.json
   "providers": [
     {
       "type": "ttf",
-      "file": "slaughterware:fonts/sf_medium.ttf",
+      "file": "pepperdine:fonts/sf_medium.ttf",
       "shift": [0.0, 0.0],
       "size": 11.0,
       "oversample": 8.0

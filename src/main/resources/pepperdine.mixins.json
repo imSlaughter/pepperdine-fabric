@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "slaughter.ware.mixin",
+  "package": "pepper.dine.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [

@@ -27,7 +27,7 @@ public final class ConfigManager {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    private final Path file = FabricLoader.getInstance().getConfigDir().resolve("slaughterware").resolve("config.json");
+    private final Path file = FabricLoader.getInstance().getConfigDir().resolve("pepperdine").resolve("config.json");
     private boolean loading;
 
     public void load() {

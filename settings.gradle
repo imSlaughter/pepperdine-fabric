@@ -6,4 +6,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "slaughterware-fabric"
+rootProject.name = "pepperdine-fabric"

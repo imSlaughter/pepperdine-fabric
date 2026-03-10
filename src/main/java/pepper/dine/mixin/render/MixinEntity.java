@@ -11,7 +11,7 @@ import pepper.dine.client.features.implementations.visual.Removals;
 public class MixinEntity {
 
     @Inject(method = "isGlowing", at = @At("HEAD"), cancellable = true)
-    private void slaughterware$disableGlow(CallbackInfoReturnable<Boolean> cir) {
+    private void pepperdine$disableGlow(CallbackInfoReturnable<Boolean> cir) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isGlowEffect()) {
             cir.setReturnValue(false);

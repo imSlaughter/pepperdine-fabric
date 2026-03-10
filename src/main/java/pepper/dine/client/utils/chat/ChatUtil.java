@@ -14,13 +14,13 @@ public class ChatUtil implements IMinecraft {
 
     public void addMess(String message) {
         MutableText gradientText = Text.literal("");
-        String textToGradient = " SlaughterWare";
+        String textToGradient = "PepperDine! ";
 
         Color startColor = new Color(90, 237, 117);
         Color endColor = new Color(166, 21, 218);
 
         for (int i = 0; i < textToGradient.length() - 1; i++) {
-            float amount = (float) i / (textToGradient.length() - 1);
+            float amount = (float) i / (textToGradient.length());
 
 
             Color gradientColor = ColorUtil.gradient(startColor, endColor, amount);

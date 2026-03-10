@@ -11,7 +11,7 @@ import pepper.dine.client.features.implementations.visual.Removals;
 public class MixinAbstractClientPlayerEntity {
 
     @Inject(method = "getFovMultiplier", at = @At("HEAD"), cancellable = true, require = 0)
-    private void slaughterware$removeFovEffect(CallbackInfoReturnable<Float> cir) {
+    private void pepperdine$removeFovEffect(CallbackInfoReturnable<Float> cir) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isSlownessFov()) {
             cir.setReturnValue(1.0f);

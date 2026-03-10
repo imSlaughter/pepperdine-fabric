@@ -14,7 +14,7 @@ import pepper.dine.client.features.implementations.visual.Removals;
 public class MixinInGameOverlayRenderer {
 
     @Inject(method = "renderFireOverlay", at = @At("HEAD"), cancellable = true)
-    private static void slaughterware$cancelFireOverlay(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Sprite sprite, CallbackInfo ci) {
+    private static void pepperdine$cancelFireOverlay(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Sprite sprite, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isFireOverlay()) {
             ci.cancel();
@@ -22,7 +22,7 @@ public class MixinInGameOverlayRenderer {
     }
 
     @Inject(method = "renderUnderwaterOverlay", at = @At("HEAD"), cancellable = true)
-    private static void slaughterware$cancelWaterOverlay(net.minecraft.client.MinecraftClient client, MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
+    private static void pepperdine$cancelWaterOverlay(net.minecraft.client.MinecraftClient client, MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isWaterOverlay()) {
             ci.cancel();
@@ -30,7 +30,7 @@ public class MixinInGameOverlayRenderer {
     }
 
     @Inject(method = "renderInWallOverlay", at = @At("HEAD"), cancellable = true)
-    private static void slaughterware$cancelInWallOverlay(Sprite sprite, MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
+    private static void pepperdine$cancelInWallOverlay(Sprite sprite, MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo ci) {
         Removals removals = Removals.getInstance();
         if (removals != null && removals.isInwallOverlay()) {
             ci.cancel();

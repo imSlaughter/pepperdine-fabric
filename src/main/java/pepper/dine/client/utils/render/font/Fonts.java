@@ -38,8 +38,8 @@ public class Fonts {
     public static AtlasFont atlas(String path) {
         return new AtlasFont(
                 path,
-                Identifier.of("slaughterware", "fonts/" + path + ".json"),
-                Identifier.of("slaughterware", "fonts/" + path + ".png")
+                Identifier.of("pepperdine", "fonts/" + path + ".json"),
+                Identifier.of("pepperdine", "fonts/" + path + ".png")
         );
     }
 

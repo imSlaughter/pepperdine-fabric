@@ -11,7 +11,7 @@ import java.awt.*;
 public class Hud extends Module {
 
     public Hud() {
-        super("HUD", GLFW.GLFW_KEY_K, ModuleCategory.VISUAL);
+        super("Watermark", GLFW.GLFW_KEY_K, ModuleCategory.VISUAL);
     }
 
     @Override
